@@ -15,7 +15,7 @@ class App extends React.Component {
     }
 
     componentDidMount(){
-        fetch('https://raw.githubusercontent.com/Danilovesovic/bands/master/bands_with_id.json')
+        fetch('https://raw.githubusercontent.com/MiraZeca/mybands/master/bands_with_id.json')
         .then(res=>{
             return res.json();
         })
