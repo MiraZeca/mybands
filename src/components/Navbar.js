@@ -1,11 +1,20 @@
 import React from "react";
+import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from "reactstrap";
 
-const Navbar = () => {
+const Navigation = () => {
     return (
-        <nav className="navbar navbar-light bg-light">
-            <a href="/" className="navbar-brand">React Bands App</a>
-        </nav>
-    )
-}
+        <Navbar color="light" light expand="md">
+            <NavbarBrand href="/">Bands App</NavbarBrand>
+            <Nav className="ml-auto" navbar>
+                <NavItem>
+                    <NavLink href="/">Home</NavLink>
+                </NavItem>
+                <NavItem>
+                    <NavLink href="/about">About</NavLink>
+                </NavItem>
+            </Nav>
+        </Navbar>
+    );
+};
 
-export default Navbar;
+export default Navigation;
