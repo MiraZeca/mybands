@@ -1,39 +1,22 @@
 import React from "react";
+import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from "reactstrap";
 
-const Modal = ({currentBand}) => {
+const ModalComponent = ({ currentBand }) => {
     return (
-        <div className="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div className="modal-dialog">
-                <div className="modal-content">
-                    <div className="modal-header">
-                        <h5 className="modal-title" id="exampleModalLabel">{currentBand.name}</h5>
-                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div className="modal-body">
-                        <div className="row">
-                            <div className="col-4">
-                                <img src={currentBand.thumb1} width="150px" height="100px" alt=""/>
-                            </div>
-                            <div className="col-4">
-                                <img src={currentBand.thumb2} width="150px" height="100px" alt=""/>
-                            </div>
-                            <div className="col-4">
-                                <img src={currentBand.thumb3} width="150px" height="100px" alt=""/>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <p className="p-2">{currentBand.info}</p>
-                        </div>
-                    </div>
-                    <div className="modal-footer">
-                        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
-}
+        <Modal isOpen={!!currentBand.id} toggle={() => {}}>
+            <ModalHeader toggle={() => {}}>Band Details</ModalHeader>
+            <ModalBody>
+                <img src={currentBand.image} alt={currentBand.name} className="img-fluid" />
+                <h4>{currentBand.name}</h4>
+                <p>{currentBand.description}</p>
+            </ModalBody>
+            <ModalFooter>
+                <Button color="secondary" onClick={() => {}}>
+                    Close
+                </Button>
+            </ModalFooter>
+        </Modal>
+    );
+};
 
-export default Modal;
+export default ModalComponent;
