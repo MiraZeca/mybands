@@ -10,7 +10,7 @@ const Navigation = () => {
                     <NavLink href="/">Home</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink href="/about">About</NavLink>
+                    <NavLink href="https://mirazeca.com/">Back to CV</NavLink>
                 </NavItem>
             </Nav>
         </Navbar>
