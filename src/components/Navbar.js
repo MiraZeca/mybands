@@ -5,6 +5,7 @@ const Navigation = () => {
     return (
         <Navbar color="light" light expand="md">
             <NavbarBrand href="/">Bands App</NavbarBrand>
+        <NavbarBrand href="/">Bands App</NavbarBrand>
             <Nav className="ml-auto" navbar>
                 <NavItem>
                     <NavLink href="/">Home</NavLink>
