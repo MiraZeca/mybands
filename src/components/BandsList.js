@@ -1,28 +1,24 @@
 import React from "react";
-import Band from "./Band";
+import { Card, CardImg, CardBody, CardTitle, Button } from "reactstrap";
 
-const BandsList = ({bands,changeCurrentBand}) => {
-    console.log(bands);
-
-    const allBands = bands.map(band=>{
-        return (
-            <div className="col-6" key={band.id}>
-                <Band band={band} changeCurrentBand={changeCurrentBand}/>
-            </div>
-        )
-    })
-
+const BandsList = ({ bands, changeCurrentBand }) => {
     return (
-        <div className="container-fluid mt-3">
-            <div className="row">
-            <div className="col-10 offset-1">
-                <div className="row">
-                    {allBands}
+        <div className="row">
+            {bands.map((band) => (
+                <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" key={band.id}>
+                    <Card>
+                        <CardImg top width="100%" src={band.image} alt={band.name} />
+                        <CardBody>
+                            <CardTitle tag="h5">{band.name}</CardTitle>
+                            <Button onClick={() => changeCurrentBand(band)} color="primary">
+                                View Details
+                            </Button>
+                        </CardBody>
+                    </Card>
                 </div>
-            </div>
-            </div>
+            ))}
         </div>
-    )
-}
+    );
+};
 
 export default BandsList;
